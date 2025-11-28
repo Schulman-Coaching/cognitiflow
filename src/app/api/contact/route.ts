@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(request: Request) {
   try {
@@ -14,6 +15,15 @@ export async function POST(request: Request) {
         { error: 'Name, email, and message are required' },
         { status: 400 }
       )
+    }
+
+    // If Resend is not configured, just log and return success
+    if (!resend) {
+      console.log('Contact form submission (email not configured):', { name, email, company, message })
+      return NextResponse.json({
+        success: true,
+        message: 'Thank you for your message. We\'ll be in touch soon!'
+      })
     }
 
     // Send notification email to Cognitiflow team
