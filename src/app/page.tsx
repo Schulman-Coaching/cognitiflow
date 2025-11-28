@@ -113,12 +113,40 @@ export default function Home() {
     company: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We\'ll be in touch within 24 hours.')
-    setFormData({ name: '', email: '', company: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Save lead to CRM
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'contact_form' }),
+      })
+
+      // Send emails
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', company: '', message: '' })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -548,13 +576,37 @@ export default function Home() {
                     required
                   />
                 </div>
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400">
+                    Thank you! We&apos;ll be in touch within 24 hours.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400">
+                    Something went wrong. Please try again or email us directly.
+                  </div>
+                )}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
+
+              {/* Calendly Integration */}
+              <div className="mt-6 pt-6 border-t border-slate-700">
+                <p className="text-slate-400 text-sm text-center mb-4">Or schedule a call directly</p>
+                <a
+                  href="https://calendly.com/cognitiflow/consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 border border-indigo-500 text-indigo-400 rounded-lg font-medium text-center hover:bg-indigo-500/10 transition"
+                >
+                  Book a Free 30-Min Consultation
+                </a>
+              </div>
             </div>
           </div>
         </div>
