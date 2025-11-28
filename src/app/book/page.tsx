@@ -117,7 +117,7 @@ export default function BookPage() {
             <div className="bg-white rounded-2xl overflow-hidden min-h-[700px]">
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/cognitiflow/consultation?hide_gdpr_banner=1&background_color=1e293b&text_color=ffffff&primary_color=6366f1"
+                data-url="https://calendly.com/elie-schulman/ai-strategy-consultation?hide_gdpr_banner=1&background_color=1e293b&text_color=ffffff&primary_color=6366f1"
                 style={{ minWidth: '100%', height: '700px' }}
               />
             </div>

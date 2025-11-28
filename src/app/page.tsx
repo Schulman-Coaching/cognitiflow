@@ -599,7 +599,7 @@ export default function Home() {
               <div className="mt-6 pt-6 border-t border-slate-700">
                 <p className="text-slate-400 text-sm text-center mb-4">Or schedule a call directly</p>
                 <a
-                  href="https://calendly.com/cognitiflow/consultation"
+                  href="https://calendly.com/elie-schulman/ai-strategy-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3 border border-indigo-500 text-indigo-400 rounded-lg font-medium text-center hover:bg-indigo-500/10 transition"
