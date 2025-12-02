@@ -344,7 +344,7 @@ export default function Home() {
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                   <Link
-                    href="#demo-video"
+                    href="/demo"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-200 text-lg"
                   >
                     <Play className="w-5 h-5" />
@@ -466,29 +466,6 @@ export default function Home() {
                 <span className="leading-tight">{point.text}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Video Demo Section */}
-      <section id="demo-video" className="py-20 px-4 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">See CognitiFlow in Action</h2>
-          <p className="text-xl text-slate-600 mb-8">Watch how our AI employee handles real tasks in 30 seconds</p>
-
-          {/* Video placeholder */}
-          <div className="relative aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-indigo-600 flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-indigo-700 transition">
-                  <Play className="w-8 h-8 text-white ml-1" />
-                </div>
-                <p className="text-white font-medium">Click to play demo video</p>
-                <p className="text-slate-400 text-sm mt-2">30-second overview</p>
-              </div>
-            </div>
-            {/* Placeholder gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/50 to-cyan-900/50"></div>
           </div>
         </div>
       </section>
