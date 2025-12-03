@@ -551,7 +551,7 @@ export default function DemoPage() {
           <div className="mt-16 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Ready to See Your Own Workflow Automated?</h2>
             <p className="text-slate-400 mb-8">
-              Book a personalized demo and we'll show you exactly how CognitiFlow can transform your specific tasks.
+              Book a personalized demo and we&apos;ll show you exactly how CognitiFlow can transform your specific tasks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
