@@ -4,10 +4,9 @@ import { NextResponse } from 'next/server'
 // Configure webhook endpoint in Stripe Dashboard: https://dashboard.stripe.com/webhooks
 // Listen for: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted
 
-const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET
 
-async function verifyStripeSignature(payload: string, signature: string): Promise<boolean> {
+async function verifyStripeSignature(_payload: string, _signature: string): Promise<boolean> {
   // In production, use Stripe SDK to verify webhook signature
   // This is a simplified version - use stripe.webhooks.constructEvent() in production
   if (!STRIPE_WEBHOOK_SECRET) {
@@ -124,11 +123,4 @@ export async function POST(request: Request) {
       { status: 500 }
     )
   }
-}
-
-// Stripe requires raw body for signature verification
-export const config = {
-  api: {
-    bodyParser: false,
-  },
 }

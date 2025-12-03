@@ -14,8 +14,6 @@ import {
   Plus,
   Clock,
   CheckCircle2,
-  AlertCircle,
-  ArrowRight,
   Calendar,
   Users,
   BarChart3,
