@@ -8,11 +8,11 @@ export default function LegalIntake() {
     contactInfo: '',
     situation: ''
   });
-  const [analysis, setAnalysis] = useState(null);
+  const [analysis, setAnalysis] = useState(<any>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefa
     setLoading(true);
     
     try {
