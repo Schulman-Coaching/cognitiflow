@@ -12,7 +12,7 @@ export default function LegalIntake() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefa
+    e.preventDefault();
     setLoading(true);
     
     try {
