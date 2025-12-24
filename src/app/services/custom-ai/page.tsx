@@ -10,10 +10,8 @@ import {
   BarChart3,
   FileSearch,
   Shield,
-  Code,
   Sparkles,
-  ArrowLeft,
-  Cpu
+  ArrowLeft
 } from 'lucide-react'
 
 const solutions = [
