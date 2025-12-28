@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   Bot,
   Zap,
@@ -20,7 +19,6 @@ import {
   Clock,
   DollarSign,
   Shield,
-  Sparkles,
   Users,
   Target,
   Laptop,
@@ -197,9 +195,6 @@ export default function Home() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const { scrollY } = useScroll()
-  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -447,7 +442,7 @@ export default function Home() {
 
                 <div className="mt-4 md:mt-6 p-3 md:p-4 bg-green-50 rounded-lg border border-green-200 text-center">
                   <div className="text-green-700 font-semibold text-sm md:text-base">Save $3,900+/month</div>
-                  <div className="text-green-600 text-xs md:text-sm">That's $46,800/year back in your pocket</div>
+                  <div className="text-green-600 text-xs md:text-sm">That&apos;s $46,800/year back in your pocket</div>
                 </div>
               </div>
             </motion.div>
@@ -536,7 +531,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-slate-500 mb-4">Don't see your use case?</p>
+            <p className="text-slate-500 mb-4">Don&apos;t see your use case?</p>
             <Link
               href="#get-started"
               className="text-indigo-600 font-semibold hover:text-indigo-700 inline-flex items-center gap-2"
@@ -559,7 +554,7 @@ export default function Home() {
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold text-slate-900">Small business owners</div>
-                    <p className="text-slate-600">Drowning in admin work and can't afford to hire</p>
+                    <p className="text-slate-600">Drowning in admin work and can&apos;t afford to hire</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -589,12 +584,12 @@ export default function Home() {
             <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Why We Built CognitiFlow</h3>
               <blockquote className="text-slate-700 leading-relaxed mb-6">
-                "We've watched countless small business owners struggle with the same problem:
+                &quot;We&apos;ve watched countless small business owners struggle with the same problem:
                 too much work, not enough hands. Enterprise companies have armies of people
                 handling their admin. We believe every business deserves that same advantage.
                 <br /><br />
                 CognitiFlow is our answer—AI employees that work alongside you, handling
-                the repetitive tasks so you can focus on growth."
+                the repetitive tasks so you can focus on growth.&quot;
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-700 font-bold">
@@ -687,7 +682,7 @@ export default function Home() {
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Security First</h2>
                 </div>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Your data security is our top priority. We've built CognitiFlow with enterprise-grade
+                  Your data security is our top priority. We&apos;ve built CognitiFlow with enterprise-grade
                   protections so you can automate with confidence.
                 </p>
                 <ul className="space-y-4">
@@ -803,7 +798,7 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What's Coming Next</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What&apos;s Coming Next</h2>
             <p className="text-xl text-slate-600">Our roadmap for making AI automation even better</p>
           </div>
 
@@ -855,7 +850,7 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Meet Your AI Employee?</h2>
               <p className="text-base md:text-xl text-slate-400 mb-6 md:mb-8">
-                Tell us about the tasks that are eating up your time. We'll show you exactly how AI can help.
+                Tell us about the tasks that are eating up your time. We&apos;ll show you exactly how AI can help.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 md:space-y-0 lg:space-y-6 mb-6 md:mb-8">
@@ -994,7 +989,7 @@ export default function Home() {
 
                 {submitStatus === 'success' && (
                   <div className="p-3 md:p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm md:text-base">
-                    <strong>Thanks!</strong> We'll reach out within 24 hours to schedule your demo.
+                    <strong>Thanks!</strong> We&apos;ll reach out within 24 hours to schedule your demo.
                   </div>
                 )}
                 {submitStatus === 'error' && (

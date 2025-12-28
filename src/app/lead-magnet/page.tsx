@@ -7,15 +7,10 @@ import {
   Download,
   CheckCircle,
   ArrowRight,
-  Mail,
   FileText,
-  Zap,
   Clock,
-  Target,
-  Shield,
-  Sparkles
+  Shield
 } from 'lucide-react'
-import type { Metadata } from 'next'
 
 const guideContents = [
   {
@@ -115,8 +110,8 @@ export default function LeadMagnetPage() {
           </div>
           <h1 className="text-3xl font-bold text-slate-900 mb-4">Check Your Inbox!</h1>
           <p className="text-lg text-slate-600 mb-8">
-            We've sent your free Automation Survival Kit to <strong>{email}</strong>.
-            If you don't see it within a few minutes, check your spam folder.
+            We&apos;ve sent your free Automation Survival Kit to <strong>{email}</strong>.
+            If you don&apos;t see it within a few minutes, check your spam folder.
           </p>
 
           <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200 mb-8">
@@ -178,7 +173,7 @@ export default function LeadMagnetPage() {
 
             {/* What's inside */}
             <div className="mb-6 md:mb-8">
-              <h2 className="text-base md:text-lg font-semibold text-slate-900 mb-3 md:mb-4">What's Inside:</h2>
+              <h2 className="text-base md:text-lg font-semibold text-slate-900 mb-3 md:mb-4">What&apos;s Inside:</h2>
               <div className="space-y-2.5 md:space-y-3">
                 {guideContents.map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5 md:gap-3">
@@ -216,7 +211,7 @@ export default function LeadMagnetPage() {
                 <Download className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
               <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1 md:mb-2">Get Your Free Copy</h2>
-              <p className="text-slate-600 text-sm md:text-base">Enter your email and we'll send it right over.</p>
+              <p className="text-slate-600 text-sm md:text-base">Enter your email and we&apos;ll send it right over.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
@@ -297,9 +292,9 @@ export default function LeadMagnetPage() {
               ))}
             </div>
             <blockquote className="text-base md:text-lg text-slate-700 mb-3 md:mb-4 italic">
-              "This guide helped me identify that I was spending 12 hours a week on tasks
+              &quot;This guide helped me identify that I was spending 12 hours a week on tasks
               that could be automated. Within a month of implementing their suggestions,
-              I had that time back to focus on growing my business."
+              I had that time back to focus on growing my business.&quot;
             </blockquote>
             <div className="flex items-center gap-3 md:gap-4">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-sm md:text-base">

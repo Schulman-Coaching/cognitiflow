@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   Bot,
@@ -9,7 +10,6 @@ import {
   Zap,
   Shield,
   Headphones,
-  Users,
   ChevronDown
 } from 'lucide-react'
 
@@ -128,15 +128,16 @@ const faqItems = [
 export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly')
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const router = useRouter()
 
   const handleCheckout = async (tier: typeof pricingTiers[0]) => {
     // In production, this would create a Stripe Checkout session
     // For now, redirect to contact form
     if (tier.name === 'Pro') {
-      window.location.href = '/#get-started'
+      router.push('/#get-started')
     } else {
       // This would be replaced with Stripe Checkout
-      window.location.href = '/#get-started'
+      router.push('/#get-started')
     }
   }
 
